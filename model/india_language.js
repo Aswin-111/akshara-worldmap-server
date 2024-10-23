@@ -35,7 +35,7 @@ const LanguageInfo = sequelize.define('LanguageInfo', {
         type: DataTypes.STRING
     },
     Countries: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
     
     },
     Current_Status: {
@@ -43,7 +43,7 @@ const LanguageInfo = sequelize.define('LanguageInfo', {
    
     },
     Script_Yes_No: {
-        type: DataTypes.ENUM('yes', 'no'),
+        type: DataTypes.STRING,
       
     },
     Using_Scripts: {
@@ -54,14 +54,14 @@ const LanguageInfo = sequelize.define('LanguageInfo', {
         type: DataTypes.STRING,
     },
     Sub_Languages:{
-        type: DataTypes.STRING
+        type: DataTypes.TEXT,
     },
     Reference: {
         type: DataTypes.TEXT,
   
     },
     Tribal_Language_Yes_No:{
-        type: DataTypes.ENUM('yes', 'no'),
+        type: DataTypes.STRING,
     },
    
     No_of_speakers: {
@@ -77,7 +77,7 @@ const LanguageInfo = sequelize.define('LanguageInfo', {
     }
 });
 
-LanguageInfo.sync({ alter: false })
+LanguageInfo.sync({ alter : true })
     .then((data) => {
         console.log('LanguageInfo table created');
     })
